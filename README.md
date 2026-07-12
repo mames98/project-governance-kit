@@ -22,6 +22,8 @@ PGK fixes all three with three files and one rule.
 | `templates/session-start.md` | The discipline every session follows: read the board first, and how to hand off. |
 | `INSTANTIATE.md` | The checklist for standing PGK up in a new project. |
 
+PGK has two layers: **Core** (the files above — instantiated day one, every project) and an **Automation Tier** (`automation-tier/` — deferred, self-contained reference specs for the scheduled traceability audit, auto-remediation, and the governance orchestrator/hot cache; activated per `automation-tier/README.md` only when a project earns it).
+
 ## The one rule
 
 **Every working session reads the state board before doing anything else, and updates it before ending.** Everything else in PGK supports that one rule.

@@ -35,11 +35,12 @@ The first working session after instantiation reads the board, verifies every cl
 
 ## What NOT to add yet
 
-PGK baseline is records-and-discipline. The following are real patterns from the system PGK was extracted from, and they are all **deferred until a specific project earns them**:
+PGK baseline is records-and-discipline. The heavier capability is **deferred but codified**: the real reference specs live self-contained in `automation-tier/` (copied verbatim from the working system PGK was extracted from, with per-spec generalization notes). When a project earns a component, activate it per `automation-tier/README.md` — don't re-derive it:
 
-- **Automation layer** (cron-refreshed orientation caches, machine-managed board sections, session locks, scheduled audits). Earned when: multiple concurrent sessions actually collide, or the board goes stale repeatedly *despite* the discipline being followed. Not before.
-- **Dispatch templating** (structured, copy-paste task briefs from advisor session to build session, with scope / stop conditions / verification). Earned when: an advisor/builder split is actively running and briefs are being rewritten from scratch each time.
-- **Traceability audits** (scheduled spec-vs-reality drift audits with a findings pipeline). Earned when: the project has enough spec surface that drift can hide.
+- **Traceability audit** (scheduled spec-vs-reality drift audit with classified findings + drafted fixes). Earned when: the project has enough spec surface that drift can hide.
+- **Auto-remediation** (autonomous application of audit-drafted mechanical fixes, quarantined then graduated). Earned when: audit findings recur mechanically and carry forward unaddressed run after run.
+- **Orchestrator + hot cache** (self-maintaining orientation cache, session hooks, governance-loop monitor, machine-managed board sections, session locks). Earned when: the project runs always-on and manual governance maintenance is a real cost, or the board goes stale repeatedly *despite* the discipline being followed.
+- **Dispatch templating** (structured, copy-paste task briefs from advisor session to build session, with scope / stop conditions / verification). Earned when: an advisor/builder split is actively running and briefs are being rewritten from scratch each time. (Not yet codified in the tier; the pattern lives in the source system's operating discipline.)
 
 Adding these speculatively is over-engineering. The board plus the decision log plus the one rule is the whole baseline.
 

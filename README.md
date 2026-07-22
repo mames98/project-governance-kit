@@ -20,7 +20,9 @@ PGK fixes all three with three files and one rule.
 | `templates/state-board.md` | The single-surface "where things stand right now" — read first, every session. |
 | `templates/decision-log.md` | The append-only record of decisions (ADRs). The *why* trail. |
 | `templates/session-start.md` | The discipline every session follows: read the board first, and how to hand off. |
-| `INSTANTIATE.md` | The checklist for standing PGK up in a new project. |
+| `INSTANTIATE.md` | Greenfield setup — a procedure a Claude session executes in a new repo (manual checklist included as an appendix). |
+| `ADOPT.md` | Brownfield adoption — a Claude session scans an existing repo read-only, proposes governance reconstructed from evidence, and writes only what you confirm. |
+| `bootstrap/` | Fill-in skeletons that wire in the one rule: a two-part `CLAUDE.md` skeleton and paste-ready assistant instructions for advisor sessions. |
 
 PGK has two layers: **Core** (the files above — instantiated day one, every project) and an **Automation Tier** (`automation-tier/` — deferred, self-contained reference specs for the scheduled traceability audit, auto-remediation, and the governance orchestrator/hot cache; activated per `automation-tier/README.md` only when a project earns it).
 
@@ -30,7 +32,12 @@ PGK has two layers: **Core** (the files above — instantiated day one, every pr
 
 ## How to use it
 
-See `INSTANTIATE.md`. In short: copy the three templates into your project's `docs/governance/` (or wherever your project keeps docs), fill in the project-specific values, write your first decision record (ADR-001) capturing the project's core premise, and you're governed.
+Two paths, both run by pointing a Claude session at a single file:
+
+- **New project** → `INSTANTIATE.md`. The session places the templates, fills what it can verify, interviews you for the rest (core premise → ADR-001, decision owners, session roles, authoritative docs), wires in the one rule via `bootstrap/`, and hands you a ready-to-ratify commit. A manual checklist survives as an appendix if you'd rather do it by hand.
+- **Existing repo** → `ADOPT.md`. The session scans read-only, proposes an authority table, a state board, and ADR candidates reconstructed from evidence — the *why* of every candidate stays blank until you supply it — then writes only what you confirm, anchored by ADR-000 marking the adoption line.
+
+Multi-session governance also works across multiple human operators: the templates parameterize the decision-gating authority as `[DECISION_OWNER]` (defined in each template; single-operator projects fill one value everywhere).
 
 ## Design principles
 

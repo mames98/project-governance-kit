@@ -32,13 +32,13 @@
 
 ---
 
-## Open operator decisions
+## Open decisions
 
-<!-- Decisions that require operator input. If no decisions are open, say so explicitly. Strike through and mark CLOSED with date when resolved — closed entries may be retained briefly for continuity, then pruned. -->
+<!-- Decisions that require [DECISION_OWNER] input — [DECISION_OWNER] is the person or role who gates decisions for this scope; in a single-operator project, that's you. Each open decision names its owner (multi-operator projects route decisions to different owners; single-operator projects have one value everywhere). If no decisions are open, say so explicitly. Strike through and mark CLOSED with date when resolved — closed entries may be retained briefly for continuity, then pruned. -->
 
-| Decision | What's blocking | Surfaced |
-|---|---|---|
-| [what decision is needed] | [what's blocking on it — which stage, spec, or work thread] | [date it was surfaced] |
+| Decision | Owner | What's blocking | Surfaced |
+|---|---|---|---|
+| [what decision is needed] | [DECISION_OWNER] | [what's blocking on it — which stage, spec, or work thread] | [date it was surfaced] |
 
 ---
 
@@ -68,7 +68,7 @@
 
 | Item | Why it's a parallel candidate | Preconditions |
 |---|---|---|
-| [what the work is] | [low dependency, operator-only, isolated scope, etc.] | [any readiness preconditions, or "None"] |
+| [what the work is] | [low dependency, [DECISION_OWNER]-only, isolated scope, etc.] | [any readiness preconditions, or "None"] |
 
 **Not currently parallel-eligible (gated):**
 - [item — what gates it]
